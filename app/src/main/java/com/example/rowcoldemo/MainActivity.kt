@@ -38,7 +38,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             RowColDemoTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MainScreen3(modifier = Modifier.padding(innerPadding))
+                    MainScreen4(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -125,6 +125,23 @@ fun MainScreen3(modifier: Modifier = Modifier) {
         TextCell("1", Modifier.align(Alignment.Top))
         TextCell("2", Modifier.align(Alignment.CenterVertically))
         TextCell("3", Modifier.align(Alignment.Bottom))
+    }
+
+}
+@Composable
+fun MainScreen4(modifier: Modifier = Modifier) {
+    val mymodifier = modifier
+        .border(width = 2.dp, color = Color.Black)
+        .padding(all = 10.dp)
+    val secondModifier = Modifier
+        .border(width = 2.dp, color = Color.Black)
+        .padding(all = 10.dp)
+
+    Column(verticalArrangement = Arrangement.Bottom,
+        modifier = modifier.height(400.dp)) {
+        TextCell("1")
+        TextCell("2")
+        TextCell("3")
     }
 
 }
